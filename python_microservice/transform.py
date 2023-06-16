@@ -12,7 +12,7 @@ def transform():
     # Add your custom data transformations here
     
     df = pd.DataFrame(data, index=[0])
-    transformed_data = "Hej Karl"
+    transformed_data = data
     
     # Return the transformed data as a JSON string
     return json.dumps(transformed_data)

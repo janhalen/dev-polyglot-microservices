@@ -43,7 +43,7 @@ services:
       
   transform:
     build:
-      context: ./transform-microservice
+      context: ./python_microservice
     environment:
       - FLASK_ENV=development
     ports:
@@ -51,7 +51,21 @@ services:
     networks:
       - node_red
     volumes:
-      - ./transform-microservice:/app
+      - ./python_microservice:/app
+  
+  services:
+  csharp_service:
+    build:
+      context: ./csharp_microservice
+    environment:
+      - ASPNETCORE_URLS=http://+:8000
+    ports:
+      - "8000:8000"
+    networks:
+      - node_red
+    volumes:
+      - ./csharp_microservice:/src
+
 
 networks: 
   node_red:
