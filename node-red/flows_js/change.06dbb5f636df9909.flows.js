@@ -13,17 +13,17 @@ const Node = {
     },
     {
       "t": "set",
-      "p": "payload",
-      "pt": "msg",
-      "to": "{\"testkey\":\"testvalue\",\"testkey2\":\"testvalue2\"}",
-      "tot": "json"
-    },
-    {
-      "t": "set",
       "p": "url",
       "pt": "msg",
       "to": "http://transform:5000/transform",
       "tot": "str"
+    },
+    {
+      "t": "set",
+      "p": "payload",
+      "pt": "msg",
+      "to": "{\"testkey\":\"testvalue\",\"testkey2\":\"testvalue2\"}",
+      "tot": "json"
     }
   ],
   "action": "",
