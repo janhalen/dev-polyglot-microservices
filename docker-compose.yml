@@ -53,15 +53,6 @@ services:
     volumes:
       - ./transform-microservice:/app
 
-   csharp-microservice:
-    build:
-      context: ./csharp-microservice
-      volumes:
-      - ./csharp-microservice:/src
-    
-
-
-
 networks: 
   node_red:
     name: node_red
