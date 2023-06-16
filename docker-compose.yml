@@ -48,6 +48,8 @@ services:
       - "5000:5000"
     networks:
       - node_red
+    volumes:
+      - ./transform-microservice:/app
 
 networks: 
   node_red:
