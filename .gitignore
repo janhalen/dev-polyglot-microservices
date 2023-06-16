@@ -1,0 +1,13 @@
+.env
+.env-development
+.npm
+.log
+node_modules
+.flows.json.backup
+.config.nodes.json
+.config.nodes.json.backup
+.config.runtime.json
+.config.users.json
+.config.users.json.backup
+package-lock.json
+node-red/.flows_cred.json.backup

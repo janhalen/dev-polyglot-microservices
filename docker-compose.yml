@@ -1,0 +1,45 @@
+version: "3.9"
+services:
+  node-red:
+    build: node-red
+    networks:
+      - node_red
+    ports:
+      - "1880:1880"
+    environment:
+      #GIT_BRANCH: ${GIT_BRANCH}
+      DB_USER: root
+      DB_PASS: pass
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_DATABASE: demo
+      
+      # Miljøvariablen FLOWS fortæller Node-RED IDEet hvilket flow.json den skal åbne og gemme ændringer i ved deploy.
+      FLOWS: "/data/flows.json"
+      
+      # Bind mount fra codespace til den kørende containers /data.
+      # Gør det muligt at deploye flowkode direkte fra IDE og bruge git til at comitte ændringerne til repo.
+    volumes:
+      - "./node-red/:/data" 
+      
+    depends_on: 
+      db:
+        condition: service_healthy
+  db:
+    image: mariadb:10.6.11
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: pass
+      MARIADB_DATABASE: demo
+    healthcheck:
+      test: mysqladmin ping -h 127.0.0.1 -u root --password=pass
+      start_period: 5s
+      interval: 5s
+      timeout: 5s
+      retries: 55
+    networks:
+      - node_red
+      
+networks: 
+  node_red:
+    name: node_red
