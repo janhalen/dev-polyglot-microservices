@@ -46,6 +46,8 @@ services:
       context: ./transform-microservice
     ports:
       - "5000:5000"
+    networks:
+      - node_red
 
 networks: 
   node_red:
