@@ -10,7 +10,7 @@ def transform():
     # Get the JSON data from the request
     data = request.get_json()
     # Add your custom data transformations here
-    transformed_data = ','.join([str(value) for value in data.values()])
+    transformed_data = '(' + ', '.join(['"{}"'.format(value) for value in data.values()]) + ')'
     # Return the transformed data as a JSON string
     return json.dumps(transformed_data)
 
