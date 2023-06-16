@@ -1,7 +1,8 @@
 version: "3.9"
 services:
   node-red:
-    build: node-red
+    build: 
+      context: ./node-red
     networks:
       - node_red
     ports:
@@ -40,6 +41,12 @@ services:
     networks:
       - node_red
       
+  transform:
+    build:
+      context: ./transform-microservice
+    ports:
+      - "5000:5000"
+
 networks: 
   node_red:
     name: node_red
