@@ -10,7 +10,8 @@ def transform():
     # Get the JSON data from the request
     data = request.get_json()
     # Add your custom data transformations here
-    transformed_data = str(tuple(data.values()))
+    df = pd.DataFrame(data, index=[0])
+    transformed_data = '(' + ', '.join(df.iloc[0].astype(str)) + ')'
     # Return the transformed data as a JSON string
     return json.dumps(transformed_data)
 
