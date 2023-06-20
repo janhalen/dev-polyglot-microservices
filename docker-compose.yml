@@ -67,7 +67,7 @@ services:
   
   r-service:
     build:
-      context: ./r_microservice
+      context: ./R_microservice
     ports:
       - "8888:8888"
 
