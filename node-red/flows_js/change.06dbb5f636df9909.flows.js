@@ -22,7 +22,7 @@ const Node = {
       "t": "set",
       "p": "url",
       "pt": "msg",
-      "to": "http://r_service:8888/transform",
+      "to": "http://r_service:8888",
       "tot": "str"
     }
   ],
