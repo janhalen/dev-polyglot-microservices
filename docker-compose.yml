@@ -65,7 +65,7 @@ services:
     volumes:
       - ./csharp_microservice:/src
   
-  r-service:
+  r_service:
     build:
       context: ./R_microservice
     ports:
