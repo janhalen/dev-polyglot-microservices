@@ -64,6 +64,13 @@ services:
       - node_red
     volumes:
       - ./csharp_microservice:/src
+  
+  r-service:
+    build:
+      context: ./r_microservice
+    ports:
+      - "8888:8888"
+
 
 
 networks: 
