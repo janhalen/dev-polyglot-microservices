@@ -11,4 +11,4 @@ WORKDIR /usr/local/src/myscripts
 RUN Rscript install_packages.R
 
 EXPOSE 8888
-CMD ["Rscript", "app.R"]
+CMD ["Rscript", "R_microservice/app.R"]
