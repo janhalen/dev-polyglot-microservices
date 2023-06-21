@@ -53,27 +53,28 @@ services:
     volumes:
       - ./python_microservice:/app
   
-  csharp_service:
-    build:
-      context: ./csharp_microservice
-    environment:
-      - ASPNETCORE_URLS=http://+:8000
-    ports:
-      - "8000:8000"
-    networks:
-      - node_red
-    volumes:
-      - ./csharp_microservice:/src
-  
-  r_service:
-    build:
-      context: ./r_microservice
-    ports:
-      - "8888:8888"
-    networks:
-      - node_red
-    volumes:
-      - ./csharp_microservice:/src
+    csharp_service:
+      build:
+        context: ./csharp_microservice
+      environment:
+        - ASPNETCORE_URLS=http://+:8000
+      ports:
+        - "8000:8000"
+      networks:
+        - node_red
+      volumes:
+        - ./csharp_microservice:/src
+    
+    r_service:
+      build:
+        context: ./r_microservice
+      ports:
+        - "8888:8888"
+      networks:
+        - node_red
+      volumes:
+        - ./r_microservice:/src
+
 
 
 
