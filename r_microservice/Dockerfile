@@ -3,6 +3,7 @@ FROM rocker/r-ver:latest as base
 
 # Install the required R packages
 RUN install2.r jug jsonlite
+RUN R -e "install.packages('jug', repos='http://cran.rstudio.com/')"
 
 # Second stage: build the app image using the base image from the first stage
 FROM base

@@ -1,6 +1,5 @@
 library(jug)
 library(jsonlite)
-library(tidyverse)
 
 jug() %>%
   post("/transform", function(req, res, err){
