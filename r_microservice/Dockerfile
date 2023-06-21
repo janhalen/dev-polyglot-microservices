@@ -1,6 +1,9 @@
 # First stage: build the base image with the required R packages
 FROM rocker/r-ver:4.1.2 as base
 
+# Install system dependencies
+RUN apt-get update && apt-get install -y libxml2
+
 # Install the required R packages
 RUN install2.r fiery jsonlite
 
