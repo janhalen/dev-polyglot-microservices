@@ -9,8 +9,8 @@ RUN apt-get update && apt-get install -y \
 
 RUN install2.r --error plumber jsonlite
 
-COPY ./r_microservice /src/r_microservice
+COPY . /src
 
 EXPOSE 8888
 
-CMD ["Rscript", "./r_microservice/service.r"]
+CMD ["Rscript", "./service.r"]
