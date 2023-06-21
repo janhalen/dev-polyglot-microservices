@@ -7,6 +7,9 @@ RUN install2.r plumber jsonlite
 # Second stage: create the final image
 FROM rhub/r-minimal
 
+# Set the R_LIBS_USER environment variable
+ENV R_LIBS_USER=/usr/local/lib/R/site-library
+
 # Set the working directory
 WORKDIR /src
 
