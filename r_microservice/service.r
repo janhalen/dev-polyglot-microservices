@@ -26,4 +26,4 @@ function(req) {
 
 # Start the plumber API
 pr <- plumb("service.r") # change "script.R" to the name of this script file
-pr$run(port=8000)
+pr$run(port=8888)
