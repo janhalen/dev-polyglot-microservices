@@ -54,7 +54,7 @@ services:
       - ./python_microservice:/app
   
   csharp_service:
-     build:
+    build:
       context: ./csharp_microservice
     environment:
       - ASPNETCORE_URLS=http://+:8000
@@ -74,7 +74,7 @@ services:
       - node_red
     volumes:
       - ./r_microservice:/src
-      
+
 networks: 
   node_red:
     name: node_red
