@@ -1,8 +1,11 @@
-# Use the rocker/r-ver image as the base image
-FROM rocker/r-ver:latest
+# First stage: build the base image with the required R packages
+FROM rocker/r-ver:latest as base
 
 # Install the required R packages
 RUN install2.r plumber jsonlite tidyverse
+
+# Second stage: build the app image using the base image from the first stage
+FROM base
 
 # Copy the R script into the image
 COPY service.r /app/service.r
