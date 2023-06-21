@@ -1,5 +1,5 @@
 # First stage: build the base image with the required R packages
-FROM rocker/r-ver:3.6.3 as base
+FROM rocker/r-ver:4.1.2 as base
 
 # Install the required R packages
 RUN install2.r jug jsonlite
