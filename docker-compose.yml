@@ -68,6 +68,8 @@ services:
   r_service:
     build:
       context: ./r_microservice
+    ulimits:
+      stack: 8388608
     ports:
       - "8888:8888"
     networks:
