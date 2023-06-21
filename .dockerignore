@@ -1,0 +1,9 @@
+.git
+.gitignore
+README.md
+LICENSE
+*.yml
+*.yaml
+!csharp_service/
+!python_service/
+!r_service/
