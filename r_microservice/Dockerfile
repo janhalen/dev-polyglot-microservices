@@ -1,16 +1,17 @@
-FROM rocker/tidyverse:4.0.0
+FROM rocker/r-base:latest
 
+# Set the working directory
 WORKDIR /src
 
-RUN apt-get update && apt-get install -y \
-    libcurl4-openssl-dev \
-    libssl-dev \
-    libxml2-dev
+# Install required R packages using install.packages
+RUN R -e "install.packages(c('plumber', 'jsonlite'))"
 
-RUN install2.r --error plumber jsonlite
-
+# Copy the R script into the container
 COPY . /src
 
 EXPOSE 8888
 
+# Run the R script when the container starts
 CMD ["Rscript", "./service.r"]
+
+
