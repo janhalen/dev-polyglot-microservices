@@ -22,7 +22,7 @@ const Node = {
       "t": "set",
       "p": "url",
       "pt": "msg",
-      "to": "http://172.25.0.2:8888/transform",
+      "to": "http://r_microservice:8888/transform",
       "tot": "str"
     }
   ],
