@@ -13,8 +13,8 @@ ENV R_LIBS_USER=/usr/local/lib/R/site-library
 # Set the working directory
 WORKDIR /src
 
-# Copy the R packages from the builder stage
-COPY --from=builder /usr/local/lib/R/site-library /usr/local/lib/R/site-library
+# Copy the R library directory from the builder stage
+COPY --from=builder /usr/local/lib/R /usr/local/lib/R
 
 # Copy the R script into the container
 COPY . /src
