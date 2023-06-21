@@ -63,7 +63,7 @@ services:
   #  networks:
   #    - node_red
   #  volumes:
-      - ./csharp_microservice:/src
+  #    - ./csharp_microservice:/src
     
   r_service:
     build:
