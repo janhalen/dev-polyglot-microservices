@@ -2,7 +2,7 @@
 FROM rocker/r-ver:latest as base
 
 # Install the required R packages
-RUN install2.r plumber jsonlite tidyverse
+RUN install2.r jug jsonlite
 
 # Second stage: build the app image using the base image from the first stage
 FROM base
