@@ -1,6 +1,7 @@
 # Unload any other packages
 loaded_packages <- names(sessionInfo()$otherPkgs)
 for (pkg in loaded_packages) {
+  print(pkg)
   detach(paste0("package:", pkg), unload = TRUE)
 }
 
