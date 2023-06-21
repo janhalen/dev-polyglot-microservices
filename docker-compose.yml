@@ -41,28 +41,28 @@ services:
     networks:
       - node_red
       
-  python_service:
-    build:
-      context: ./python_microservice
-    environment:
-      - FLASK_ENV=development
-    ports:
-      - "5000:5000"
-    networks:
-      - node_red
-    volumes:
-      - ./python_microservice:/app
+  #python_service:
+  #  build:
+  #    context: ./python_microservice
+  #  environment:
+  #    - FLASK_ENV=development
+  #  ports:
+  #    - "5000:5000"
+  #  networks:
+  #    - node_red
+  #  volumes:
+  #    - ./python_microservice:/app
   
-  csharp_service:
-    build:
-      context: ./csharp_microservice
-    environment:
-      - ASPNETCORE_URLS=http://+:8000
-    ports:
-      - "8000:8000"
-    networks:
-      - node_red
-    volumes:
+  #csharp_service:
+  #  build:
+  #    context: ./csharp_microservice
+  #  environment:
+  #    - ASPNETCORE_URLS=http://+:8000
+  #  ports:
+  #    - "8000:8000"
+  #  networks:
+  #    - node_red
+  #  volumes:
       - ./csharp_microservice:/src
     
   r_service:
