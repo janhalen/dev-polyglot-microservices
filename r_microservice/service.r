@@ -1,5 +1,5 @@
 # Load required libraries
-library(plumber)
+library(httr)
 library(jsonlite)
 
 # Define the transform function
@@ -9,11 +9,18 @@ transform_function <- function(data) {
   return(result)
 }
 
-#* @post /transform
-function(req) {
-  tryCatch({
+# Create an HTTP server
+server <- Rook::Server$new()
+
+# Define the /transform endpoint
+server$add(app = Rook::URLMap$new(), "/", function(env) {
+  # Check if this is a POST request
+  if (env$REQUEST_METHOD == "POST") {
+    # Read the request body
+    req_body <- rawToChar(env$rook.input$read())
+    
     # Parse the JSON data from the request body
-    data <- fromJSON(req$postBody)
+    data <- fromJSON(req_body)
     
     # Convert the data to a data frame
     df <- as.data.frame(data)
@@ -22,18 +29,17 @@ function(req) {
     result <- transform_function(df)
     
     # Return the result as JSON
-    return(toJSON(result))
-  }, error = function(e) {
-    # Print the error message
-    print(e$message)
-    
-    # Return an error response
-    res <- plumber::res$status(500)
-    res$body <- list(error = e$message)
-    return(res)
-  })
-}
+    res <- Rook::Response$new()
+    res$write(toJSON(result))
+    res$finish()
+  } else {
+    # Return an error response for non-POST requests
+    res <- Rook::Response$new()
+    res$status <- 400
+    res$write("Bad Request")
+    res$finish()
+  }
+})
 
-# Start the plumber API
-pr <- plumb("service.r") # change "script.R" to the name of this script file
-pr$run(port=8888)
+# Start the server on port 8888
+server$start(port = 8888)
