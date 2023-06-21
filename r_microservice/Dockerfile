@@ -2,7 +2,7 @@ FROM rocker/r-ver:4.0.0
 
 ARG MRAN=https://mran.microsoft.com/snapshot/2022-01-01
 
-RUN echo "options(repos = c(CRAN='$MRAN'), download.file.method = 'libcurl')" >> /etc/R/Rprofile.site
+RUN echo 'options(repos = c(CRAN="$MRAN"), download.file.method = "libcurl")' >> /etc/R/Rprofile.site
 
 WORKDIR /src
 
