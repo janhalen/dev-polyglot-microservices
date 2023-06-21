@@ -1,13 +1,10 @@
-FROM rocker/r-base:latest
+FROM rhub/r-minimal
 
-# Setup repository for binary packages
-ENV R_REPOS=https://packagemanager.rstudio.com/all/__linux__/focal/latest
+# Install required R packages using installr
+RUN installr -d -t "libcurl4-openssl-dev libssl-dev libxml2-dev" plumber jsonlite
 
 # Set the working directory
 WORKDIR /src
-
-# Install required R packages using install.packages
-RUN R -e "install.packages(c('plumber', 'jsonlite'))"
 
 # Copy the R script into the container
 COPY . /src
