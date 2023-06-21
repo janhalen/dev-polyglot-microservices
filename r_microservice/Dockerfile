@@ -5,7 +5,7 @@ FROM rocker/r-ver:4.1.2 as base
 RUN apt-get update && apt-get install -y libxml2
 
 # Install the required R packages
-RUN install2.r fiery jsonlite
+RUN install2.r fiery tibble jsonlite
 
 # Second stage: build the app image using the base image from the first stage
 FROM base
