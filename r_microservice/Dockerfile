@@ -1,20 +1,10 @@
-# First stage: build the R packages
-FROM rocker/r-ubuntu:20.04 as builder
+FROM rocker/r-ver:latest
 
 # Install required R packages
 RUN install2.r plumber jsonlite
 
-# Second stage: create the final image
-FROM rhub/r-minimal
-
-# Set the R_LIBS_USER environment variable
-ENV R_LIBS_USER=/usr/local/lib/R/site-library
-
 # Set the working directory
 WORKDIR /src
-
-# Copy the R library directory from the builder stage
-COPY --from=builder /usr/local/lib/R /usr/local/lib/R
 
 # Copy the R script into the container
 COPY . /src
