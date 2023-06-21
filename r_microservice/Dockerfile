@@ -7,8 +7,8 @@ RUN install2.r Rserve jsonlite
 # Second stage: build the app image using the base image from the first stage
 FROM base
 
-# Copy the R script into the image
-COPY service.r /app/service.r
+# Copy all the files from the r_microservice directory into the image
+COPY . /app
 
 # Set the working directory
 WORKDIR /app

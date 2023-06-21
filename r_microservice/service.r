@@ -1,8 +1,8 @@
 library(Rserve)
 library(jsonlite)
 
-# Start the Rserve server
-run.Rserve()
+# Start the Rserve server using the configuration file
+run.Rserve(config.file = "Rserve.conf")
 
 # Define a function to handle incoming POST requests
 handle_post_request <- function(request) {
