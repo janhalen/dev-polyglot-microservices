@@ -1,7 +1,7 @@
 FROM rocker/r-ver:latest
 
 # Install required R packages
-RUN install2.r httr jsonlite
+RUN install2.r Rook httr jsonlite
 
 # Set the working directory
 WORKDIR /src
