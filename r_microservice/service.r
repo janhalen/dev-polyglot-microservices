@@ -16,5 +16,5 @@ function(req){
 }
 
 # Run the Plumber app on host 0.0.0.0 (accessible from any IP address)
-pr <- plumb()
+pr <- plumb(service.r)
 pr$run(host='0.0.0.0')
