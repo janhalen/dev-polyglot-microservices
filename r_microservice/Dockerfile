@@ -11,4 +11,4 @@ COPY . /usr/local/src/myscripts
 WORKDIR /usr/local/src/myscripts
 
 EXPOSE 8888
-CMD ["Rscript", "R_microservice/app.R"]
+CMD ["Rscript", "r_microservice/service.r"]
