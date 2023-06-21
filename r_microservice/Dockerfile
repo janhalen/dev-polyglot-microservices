@@ -1,5 +1,7 @@
 FROM rocker/r-ver:4.0.0
 
+WORKDIR /usr/local/src/myscripts
+
 RUN apt-get update && apt-get install -y \
     libcurl4-openssl-dev \
     libssl-dev \
@@ -7,8 +9,10 @@ RUN apt-get update && apt-get install -y \
 
 RUN install2.r --error plumber jsonlite
 
-COPY /r_microservice /usr/local/src/myscripts/r_microservice
-WORKDIR /usr/local/src/myscripts
+COPY ./r_microservice /usr/local/src/myscripts/r_microservice
 
 EXPOSE 8888
-CMD ["Rscript", "/r_microservice/service.r"]
+
+RUN ls -l /usr/local/src/myscripts
+
+CMD ["Rscript", "./r_microservice/service.r"]
