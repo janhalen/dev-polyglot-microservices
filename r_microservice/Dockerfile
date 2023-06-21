@@ -2,7 +2,7 @@
 FROM rocker/r-ver:4.1.2 as base
 
 # Install the required R packages
-RUN install2.r jug jsonlite
+RUN install2.r fiery jsonlite
 
 # Second stage: build the app image using the base image from the first stage
 FROM base
