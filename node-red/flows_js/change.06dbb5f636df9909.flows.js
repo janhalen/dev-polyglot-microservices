@@ -20,9 +20,16 @@ const Node = {
     },
     {
       "t": "set",
+      "p": "payload",
+      "pt": "msg",
+      "to": "test",
+      "tot": "str"
+    },
+    {
+      "t": "set",
       "p": "url",
       "pt": "msg",
-      "to": "http://r_microservice:8888/transform",
+      "to": "rmicroservice:8888/transform",
       "tot": "str"
     }
   ],
