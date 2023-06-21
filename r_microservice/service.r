@@ -1,21 +1,20 @@
-# Unload any other packages
-loaded_packages <- names(sessionInfo()$otherPkgs)
-for (pkg in loaded_packages) {
-  print(pkg)
-  detach(paste0("package:", pkg), character.only = TRUE, unload = TRUE)
+library(Rserve)
+library(jsonlite)
+
+# Start the Rserve server
+run.Rserve()
+
+# Define a function to handle incoming POST requests
+handle_post_request <- function(request) {
+  # Parse the request body as JSON
+  data <- fromJSON(rawToChar(request$payload))
+
+  # Transform the data
+  transformed_data <- data
+
+  # Return the transformed data as a JSON response
+  toJSON(transformed_data)
 }
 
-print("before fiery")
-library(fiery)
-print("after fiery")
-
-app <- Fire$new()
-
-app$on_request(function(req, res) {
-  if (req$method == "POST" && req$path == "/transform") {
-    res$set_body("Hello, world!")
-    res$set_header("Content-Type", "text/plain")
-  }
-})
-
-app$start(port = 8888)
+# Register the function to handle POST requests on the "/transform" endpoint
+addHTTPHandler("/transform", handle_post_request)

@@ -1,11 +1,8 @@
 # First stage: build the base image with the required R packages
 FROM rocker/r-ver:4.1.2 as base
 
-# Install system dependencies
-RUN apt-get update && apt-get install -y libxml2
-
 # Install the required R packages
-RUN install2.r fiery tibble jsonlite
+RUN install2.r Rserve jsonlite
 
 # Second stage: build the app image using the base image from the first stage
 FROM base
@@ -16,7 +13,7 @@ COPY service.r /app/service.r
 # Set the working directory
 WORKDIR /app
 
-# Expose port 8888 for the Plumber API
+# Expose port 8888 for the Rserve server
 EXPOSE 8888
 
 # Run the R script when the container starts

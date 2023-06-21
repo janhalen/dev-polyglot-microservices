@@ -1,14 +1,6 @@
-print("before fiery")
 library(fiery)
-print("after fiery")
-
-print("before jsonlite")
 library(jsonlite)
-print("after jsonlite")
-
-print("before tibble")
 library(tibble)
-print("after tibble")
 
 app <- Fire$new()
 
