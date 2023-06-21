@@ -70,6 +70,10 @@ services:
       context: ./r_microservice
     ports:
       - "8888:8888"
+    networks:
+      - node_red
+    volumes:
+      - ./csharp_microservice:/src
 
 
 
