@@ -1,5 +1,8 @@
 FROM rocker/r-base:latest
 
+# Setup repository for binary packages
+ENV R_REPOS=https://packagemanager.rstudio.com/all/__linux__/focal/latest
+
 # Set the working directory
 WORKDIR /src
 
