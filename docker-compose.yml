@@ -75,7 +75,7 @@ services:
     networks:
       - node_red
     volumes:
-      - ./r_microservice:/src
+      - ./r_microservice:/app
 
 networks: 
   node_red:
