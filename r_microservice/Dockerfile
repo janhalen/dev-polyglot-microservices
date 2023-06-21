@@ -1,7 +1,7 @@
 FROM rhub/r-minimal
 
 # Install required R packages using installr
-RUN installr -d -t "libcurl4-openssl-dev libssl-dev libxml2-dev" plumber jsonlite
+RUN installr -d -t "libcurl openssl-dev libxml2-dev" plumber jsonlite
 
 # Set the working directory
 WORKDIR /src
