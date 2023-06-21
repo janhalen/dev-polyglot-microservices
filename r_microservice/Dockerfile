@@ -5,7 +5,7 @@ FROM rocker/r-ver:latest
 RUN install2.r plumber jsonlite tidyverse
 
 # Copy the R script into the image
-COPY r_microservice/service.R /app/service.R
+COPY r_microservice/service.r /app/service.r
 
 # Set the working directory
 WORKDIR /app
@@ -14,4 +14,4 @@ WORKDIR /app
 EXPOSE 8888
 
 # Run the R script when the container starts
-CMD ["Rscript", "service.R"]
+CMD ["Rscript", "service.r"]
