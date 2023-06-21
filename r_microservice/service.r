@@ -1,3 +1,7 @@
+# Load required libraries
+library(plumber)
+library(jsonlite)
+
 # Define the transform function
 transform_function <- function(data) {
   # Calculate the mean of a numeric column in the data frame
