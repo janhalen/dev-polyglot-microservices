@@ -1,6 +1,9 @@
 # First stage: build the base image with the required R packages
 FROM rocker/r-ver:3.6.3 as base
 
+# Create the /src directory to debug the install.log
+RUN mkdir -p /src
+
 # Install the required R packages and pipe the install log to the mounted volume from the compose file
 RUN install2.r jug jsonlite | tee /src/install.log
 
