@@ -2,7 +2,7 @@
 loaded_packages <- names(sessionInfo()$otherPkgs)
 for (pkg in loaded_packages) {
   print(pkg)
-  detach(paste0("package:", pkg), unload = TRUE)
+  detach(paste0("package:", pkg), character.only = TRUE, unload = TRUE)
 }
 
 print("before fiery")
