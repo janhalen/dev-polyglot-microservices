@@ -1,3 +1,9 @@
+# Unload any other packages
+loaded_packages <- names(sessionInfo()$otherPkgs)
+for (pkg in loaded_packages) {
+  detach(paste0("package:", pkg), unload = TRUE)
+}
+
 print("before fiery")
 library(fiery)
 print("after fiery")
