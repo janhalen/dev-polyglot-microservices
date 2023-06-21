@@ -5,15 +5,20 @@ library(tibble)
 app <- Fire$new()
 
 app$add_route("POST", "/transform", function(req, res) {
-  # Get the JSON data from the request
+  print("before fromJSON")
   data <- fromJSON(content(req$body))
+  print("after fromJSON")
   
-  # Add your custom data transformations here
+  print("before as_tibble")
   df <- as_tibble(data)
+  print("after as_tibble")
+  
   transformed_data <- data
   
-  # Return the transformed data as a JSON string
+  print("before toJSON")
   res$set_body(toJSON(transformed_data))
+  print("after toJSON")
+  
   res$set_header("Content-Type", "application/json")
 })
 
