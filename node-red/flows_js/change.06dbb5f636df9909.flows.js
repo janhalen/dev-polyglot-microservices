@@ -15,7 +15,7 @@ const Node = {
       "t": "set",
       "p": "payload",
       "pt": "msg",
-      "to": "{\"testkey\":\"testvalue\",\"testkey2\":\"testvalue2\"}",
+      "to": "{\"testkey\": 20,\"testkey2\": 9028340}",
       "tot": "json"
     },
     {
