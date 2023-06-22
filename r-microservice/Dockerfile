@@ -1,4 +1,5 @@
 # Use the rstudio/plumber image as the base image
+# https://github.com/rstudio/plumber/blob/main/Dockerfile
 FROM rstudio/plumber
 
 # Install the jsonlite package
@@ -11,4 +12,4 @@ COPY service.r /service/service.r
 WORKDIR /service
 
 # Start the plumber API when the container starts
-CMD ["R", "-e", "pr <- plumber::plumb('service.r'); pr$run(host = '0.0.0.0', port = 8888)"]
+CMD ["/service/service.r"]

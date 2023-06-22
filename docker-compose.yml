@@ -69,7 +69,7 @@ services:
     build:
       context: ./r-microservice
     ports:
-      - "8888:8888"
+      - "8888:8000"
     networks:
       - node_red
     volumes:
