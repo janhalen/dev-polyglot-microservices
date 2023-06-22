@@ -65,15 +65,15 @@ services:
   #  volumes:
   #    - ./csharp_microservice:/src
     
-  rmicroservice:
+  r-microservice:
     build:
-      context: ./r_microservice
+      context: ./r-microservice
     ports:
       - "8888:8888"
     networks:
       - node_red
     volumes:
-      - ./r_microservice:/app
+      - ./r-microservice:/service
 
 networks: 
   node_red:
