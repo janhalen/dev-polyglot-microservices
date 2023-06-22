@@ -5,7 +5,7 @@ FROM rstudio/plumber
 RUN R -e "install.packages('jsonlite')"
 
 # Copy the plumber.R script into the /service directory in the image
-COPY ./r-microservice/service.r /service/service.r
+COPY service.r /service/service.r
 
 # Set the working directory to /service
 WORKDIR /service
