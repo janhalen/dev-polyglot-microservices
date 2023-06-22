@@ -13,5 +13,5 @@ function(req) {
   sum_of_values <- sum(numeric_values)
 
   # Return the transformed data as a JSON response
-  return(transformed_data)
+  return(sum_of_values)
 }
