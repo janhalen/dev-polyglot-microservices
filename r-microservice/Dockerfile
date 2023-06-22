@@ -11,4 +11,4 @@ COPY service.r /service/service.r
 WORKDIR /service
 
 # Start the plumber API when the container starts
-CMD ["R", "-e", "pr <- plumber::plumb('plumber.R'); pr$run(port = 8888)"]
+CMD ["R", "-e", "pr <- plumber::plumb('service.r'); pr$run(port = 8888)"]
