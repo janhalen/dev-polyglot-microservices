@@ -16,7 +16,7 @@ services:
       FLOWS: "/data/flows.json"
 
     depends_on:
-      - redis_microservice
+      - redis_microservice  
       
     volumes:
       - "./node-red/:/data" 
