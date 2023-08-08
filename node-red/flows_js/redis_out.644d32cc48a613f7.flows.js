@@ -7,10 +7,10 @@ const Node = {
   "name": "data",
   "topic": "data",
   "obj": true,
-  "x": 290,
-  "y": 420,
+  "x": 510,
+  "y": 60,
   "wires": [],
-  "_order": 6
+  "_order": 2
 }
 
 module.exports = Node;

@@ -1,12 +1,12 @@
 const Node = {
-  "id": "d46c750459e2620a",
+  "id": "455638d57c526f62",
   "type": "http request",
   "z": "971a7ae6df987a48",
   "name": "",
-  "method": "use",
-  "ret": "txt",
+  "method": "GET",
+  "ret": "obj",
   "paytoqs": "ignore",
-  "url": "",
+  "url": "https://jsonplaceholder.typicode.com/users",
   "tls": "",
   "persist": false,
   "proxy": "",
@@ -14,14 +14,14 @@ const Node = {
   "authType": "",
   "senderr": false,
   "headers": [],
-  "x": 550,
-  "y": 180,
+  "x": 290,
+  "y": 60,
   "wires": [
     [
-      "b50d3f8543e3c4e3"
+      "644d32cc48a613f7"
     ]
   ],
-  "_order": 2
+  "_order": 6
 }
 
 module.exports = Node;
