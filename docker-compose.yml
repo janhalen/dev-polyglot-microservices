@@ -14,11 +14,14 @@ services:
       DB_PORT: 3306
       DB_DATABASE: dev      
       FLOWS: "/data/flows.json"
+
+    depends_on:
+      - redis_microservice
       
     volumes:
       - "./node-red/:/data" 
 
-  redis_queue:
+  redis_microservice:
     build:
       context: ./redis_microservice
     ports:
@@ -27,7 +30,7 @@ services:
     build:
       context: ./python_queue_microservice
     depends_on:
-      - redis
+      - redis_microservice
 
 networks: 
   node_red:
