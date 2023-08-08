@@ -24,11 +24,15 @@ services:
   redis_microservice:
     build:
       context: ./redis_microservice
+    networks:
+      - node_red
     ports:
       - "6379:6379"
   python_microservice:
     build:
       context: ./python_queue_microservice
+    networks:
+      - node_red
     depends_on:
       - redis_microservice
 
