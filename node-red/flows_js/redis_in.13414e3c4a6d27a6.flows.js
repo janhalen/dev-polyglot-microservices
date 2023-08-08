@@ -8,8 +8,8 @@ const Node = {
   "topic": "results",
   "obj": true,
   "timeout": 0,
-  "x": 630,
-  "y": 60,
+  "x": 610,
+  "y": 180,
   "wires": [
     [
       "88121ba3f1287d44"
