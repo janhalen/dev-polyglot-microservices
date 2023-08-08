@@ -3,7 +3,7 @@ import redis
 import time
 
 # Connect to the Redis server
-r = redis.Redis()
+r = redis.Redis(host='redis_microservice')
 
 # Subscribe to the "data" topic
 p = r.pubsub()
