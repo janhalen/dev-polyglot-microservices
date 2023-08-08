@@ -1,4 +1,4 @@
 FROM redis:latest
 
 # Enable memory overcommit
-RUN sysctl vm.overcommit_memory=1
+RUN echo 1 > /proc/sys/vm/overcommit_memory
