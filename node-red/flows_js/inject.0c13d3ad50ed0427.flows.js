@@ -1,32 +1,28 @@
 const Node = {
-  "id": "ee7efb55298d5ced",
+  "id": "0c13d3ad50ed0427",
   "type": "inject",
   "z": "971a7ae6df987a48",
   "name": "",
   "props": [
     {
       "p": "payload"
-    },
-    {
-      "p": "topic",
-      "vt": "str"
     }
   ],
-  "repeat": "",
+  "repeat": "0.1",
   "crontab": "",
-  "once": false,
+  "once": true,
   "onceDelay": 0.1,
   "topic": "",
-  "payload": "",
-  "payloadType": "date",
-  "x": 120,
-  "y": 180,
+  "payload": "{\"key1\": \"value1\", \"key2\": \"value2\"}",
+  "payloadType": "json",
+  "x": 130,
+  "y": 420,
   "wires": [
     [
-      "06dbb5f636df9909"
+      "644d32cc48a613f7"
     ]
   ],
-  "_order": 4
+  "_order": 7
 }
 
 module.exports = Node;
