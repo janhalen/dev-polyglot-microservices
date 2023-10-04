@@ -11,3 +11,6 @@ node_modules
 .config.users.json.backup
 package-lock.json
 node-red/.flows_cred.json.backup
+grafana.db
+grafana/csv
+grafana/plugins
