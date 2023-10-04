@@ -26,6 +26,8 @@ services:
       - "./grafana:/var/lib/grafana"
     networks:
       - demo-stack
+    depends_on:
+      - mosquitto
 
   mosquitto:
     image: eclipse-mosquitto:latest

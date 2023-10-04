@@ -7,15 +7,15 @@ const Node = {
   "qos": "",
   "retain": "",
   "respTopic": "",
-  "contentType": "",
+  "contentType": "application/json",
   "userProps": "",
   "correl": "",
   "expiry": "",
   "broker": "70740ce9adaf5ee3",
-  "x": 910,
+  "x": 810,
   "y": 100,
   "wires": [],
-  "_order": 5
+  "_order": 3
 }
 
 module.exports = Node;
