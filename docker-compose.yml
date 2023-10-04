@@ -14,6 +14,9 @@ services:
       
     volumes:
       - "./node-red/:/data" 
+    
+    networks:
+      - demo-stack
 
   grafana:
     image: grafana/grafana:latest
@@ -21,7 +24,9 @@ services:
       - '3000:3000'
     volumes:
       - "./grafana:/var/lib/grafana"
-      
+    networks:
+      - demo-stack
+
   mosquitto:
     image: eclipse-mosquitto:latest
     ports:
@@ -30,3 +35,9 @@ services:
     volumes:
       - "./mosquitto/data:/mosquitto/data"
       - "./mosquitto/log:/mosquitto/log"
+      - "./mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf"
+    networks:
+      - demo-stack
+
+networks:
+  demo-stack:
