@@ -3,44 +3,30 @@ services:
   node-red:
     build: 
       context: ./node-red
-    networks:
-      - node_red
+    
     ports:
       - "1880:1880"
     environment:
       FLOWS: "/data/flows.json"
 
     depends_on:
-      - redis_microservice  
+      - mosquitto  
       
     volumes:
       - "./node-red/:/data" 
 
-  redis_microservice:
-    build:
-      context: ./redis_microservice
-    networks:
-      - node_red
-
-  python_microservice:
-    build:
-      context: ./python_queue_microservice
-    networks:
-      - node_red
-    depends_on:
-      - redis_microservice
-
   grafana:
-    build: ./grafana
+    image: grafana/grafana:latest
     ports:
       - '3000:3000'
-    networks:
-      - node_red
     volumes:
       - "./grafana:/var/lib/grafana"
-
-networks: 
-  node_red:
-    name: node_red
-
-
+      
+  mosquitto:
+    image: eclipse-mosquitto:latest
+    ports:
+      - '1883:1883'
+      - '9001:9001'
+    volumes:
+      - "./mosquitto/data:/mosquitto/data"
+      - "./mosquitto/log:/mosquitto/log"
