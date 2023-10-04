@@ -4,12 +4,12 @@ const Node = {
   "z": "971a7ae6df987a48",
   "name": "trigger",
   "props": [],
-  "repeat": "",
+  "repeat": "2",
   "crontab": "",
   "once": false,
   "onceDelay": 0.1,
   "topic": "",
-  "x": 120,
+  "x": 130,
   "y": 100,
   "wires": [
     [

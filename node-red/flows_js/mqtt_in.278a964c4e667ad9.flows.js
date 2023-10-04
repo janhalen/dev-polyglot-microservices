@@ -11,8 +11,8 @@ const Node = {
   "rap": true,
   "rh": 0,
   "inputs": 0,
-  "x": 740,
-  "y": 240,
+  "x": 750,
+  "y": 220,
   "wires": [
     [
       "f64e7b602bd6fa33"

@@ -15,8 +15,8 @@ const Node = {
       "t": "set",
       "p": "payload",
       "pt": "msg",
-      "to": "test",
-      "tot": "str"
+      "to": "{\"test\": $random()}",
+      "tot": "jsonata"
     }
   ],
   "action": "",
