@@ -30,6 +30,15 @@ services:
     depends_on:
       - redis_microservice
 
+  grafana:
+    build: ./grafana
+    ports:
+      - '3000:3000'
+    volumes:
+      - "./grafana:/var/lib/grafana"
+
 networks: 
   node_red:
     name: node_red
+
+

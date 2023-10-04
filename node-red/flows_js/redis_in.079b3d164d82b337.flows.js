@@ -1,21 +1,21 @@
 const Node = {
-  "id": "13414e3c4a6d27a6",
+  "id": "079b3d164d82b337",
   "type": "redis-in",
-  "z": "971a7ae6df987a48",
+  "z": "96e7bc61735c9532",
   "server": "1829b1de1c4f3d62",
   "command": "subscribe",
   "name": "",
-  "topic": "results",
+  "topic": "aarhus_offentligt_forbrug_time",
   "obj": true,
   "timeout": 0,
-  "x": 610,
-  "y": 180,
+  "x": 160,
+  "y": 100,
   "wires": [
     [
-      "88121ba3f1287d44"
+      "3e3df99ea0a2720a"
     ]
   ],
-  "_order": 3
+  "_order": 12
 }
 
 module.exports = Node;

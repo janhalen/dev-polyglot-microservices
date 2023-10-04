@@ -1,11 +1,11 @@
 const Node = {
-  "id": "971a7ae6df987a48",
+  "id": "96e7bc61735c9532",
   "type": "tab",
-  "label": "Data Extract",
+  "label": "Visualisering",
   "disabled": false,
   "info": "",
   "env": [],
-  "_order": 0
+  "_order": 1
 }
 
 module.exports = Node;
