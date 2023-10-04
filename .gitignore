@@ -13,4 +13,3 @@ package-lock.json
 node-red/.flows_cred.json.backup
 grafana.db
 grafana/csv
-grafana/plugins
